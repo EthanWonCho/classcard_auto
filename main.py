@@ -120,8 +120,8 @@ time.sleep(0.5)  # 로딩 대기
 word_d = word_get(driver, num_d)  # 단어를 가져옴
 da_e, da_k, da_kyn = word_d
 
-ch_d = chd_wh()  # 학습유형 입력
 while 1:
+    ch_d = chd_wh()  # 학습유형 입력
     if ch_d == 1:
         print("암기학습은 지원하지 않습니다.")
     elif ch_d == 2:
@@ -134,7 +134,6 @@ while 1:
         controler.run(num_d=num_d, word_d=word_d)  # 학습 시작
     elif ch_d == 4:
         print("테스트학습은 지원하지 않습니다.")
-
     elif ch_d == 5:
         print("암기학습 API 요청을 시작합니다.")
         classcard_api_post(
@@ -162,6 +161,7 @@ while 1:
             view_cnt=num_d,
             activity=3,
         )
+
     print("학습이 종료되었습니다.")
     driver.get(set_site)  # 다시 세트페이지로 이동
     time.sleep(1)
